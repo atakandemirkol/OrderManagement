@@ -1,0 +1,15 @@
+<nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+  <nb-card-header>
+    <div class="row">
+      <div class="col">Order Management</div>
+      <div class="col col_tools">
+        <button nbButton outline (click)="getOrder(0)" class="appearance-filled size-medium shape-rectangle status-basic nb-transition" style="float: right;"><i style="font-size: 20px;" class="fas fa-plus"></i> </button>
+      </div>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]="source">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

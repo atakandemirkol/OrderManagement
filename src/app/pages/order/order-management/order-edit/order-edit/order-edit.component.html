@@ -1,0 +1,78 @@
+<nb-card style="max-height: 600px;min-width: 500px;" [nbSpinner]="loading" nbSpinnerStatus="primary">
+    <nb-card-header>Order Operation
+        <nb-icon (click)="cancel()" style="float: right; cursor: pointer; font-size: 30px;" icon="close-square-outline">
+        </nb-icon>
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="dataItemForm">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Order Code</label>
+                        <input type="text" formControlName="orderCode" nbInput fullWidth id="exampleInput"
+                            placeholder="Order Code">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Order Date</label>
+                        <input matInput nbInput [matDatepicker]="pickerStart" formControlName="orderDate"
+                            class="input-full-width size-medium shape-rectangle" fullWidth style="width: 88%;">
+                        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerStart></mat-datepicker>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInputCampaignName" class="label">Order Type Id</label>
+                        <input type="number" formControlName="orderTypeId" nbInput fullWidth id="exampleInput"
+                            placeholder="Order Type Id">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Order State Id</label>
+                        <input type="number" formControlName="orderStateId" nbInput fullWidth id="exampleInput"
+                            placeholder="Order State Id">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Order Count</label>
+                        <input type="number" formControlName="orderCount" nbInput fullWidth id="exampleInput"
+                            placeholder="Order Count">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Model Id</label>
+                        <input type="number" formControlName="modelId" nbInput fullWidth id="exampleInput"
+                            placeholder="Model Id">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleInput" class="label">Explanation</label>
+                        <input type="text" formControlName="explanation" nbInput fullWidth id="exampleInput"
+                            placeholder="Explanation">
+                    </div>
+                </div>
+            </div>
+            <button nbButton (click)="save()"
+                class="appearance-filled size-medium shape-rectangle status-basic nb-transition"
+                style="float: right;">Save</button>
+        </form>
+    </nb-card-body>
+</nb-card>
